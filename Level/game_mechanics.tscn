@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cc7xah41hgiub"]
+
+[ext_resource type="Script" uid="uid://cmgyc6p1prx37" path="res://Level/game_mechanics.gd" id="1_53w33"]
+[ext_resource type="Environment" uid="uid://cdjq6e3pcv5ov" path="res://Objects/Environment/Defaults/default_high.tres" id="1_dd4gg"]
+[ext_resource type="Material" uid="uid://dl7krlcnai0qx" path="res://Level/Assets/Materials/ProtoDark.tres" id="1_yoarj"]
+[ext_resource type="PackedScene" uid="uid://dkty77argxwyc" path="res://Player/player.tscn" id="2_0pkd4"]
+[ext_resource type="PackedScene" uid="uid://dlrkwthm6js8e" path="res://Player/Grabpack/Hands/red.tscn" id="2_0t2dv"]
+[ext_resource type="PackedScene" uid="uid://b3of7j842y6tj" path="res://Objects/Gameplay/Locker/locker.tscn" id="2_dgqrg"]
+[ext_resource type="PackedScene" uid="uid://nkvm74l6uu31" path="res://Player/Grabpack/Hands/purple.tscn" id="3_dd4gg"]
+[ext_resource type="PackedScene" uid="uid://cci31kuqdnklx" path="res://Objects/Gameplay/Gates/gate.tscn" id="3_nlnp5"]
+[ext_resource type="PackedScene" uid="uid://5xwl88xktvuo" path="res://Player/Grabpack/Hands/flare.tscn" id="4_flpft"]
+[ext_resource type="PackedScene" uid="uid://b6jhnelyu0cjv" path="res://Objects/Gameplay/Gates/large_gate.tscn" id="4_fy7o5"]
+[ext_resource type="PackedScene" uid="uid://cvh1jtt03kmwl" path="res://Objects/Gameplay/Puzzles/OutletPower/power_receiver.tscn" id="9_qvhf1"]
+[ext_resource type="PackedScene" uid="uid://suk08mb56uwp" path="res://Objects/Gameplay/Puzzles/OutletPower/power_outlet.tscn" id="10_dnb67"]
+[ext_resource type="Script" uid="uid://dblhvonm2ucx7" path="res://Objects/Gameplay/puzzle_complete_sfx.gd" id="10_yahcc"]
+[ext_resource type="PackedScene" uid="uid://bqbhkd8ba6j1o" path="res://Objects/Gameplay/Puzzles/OutletPower/power_pole.tscn" id="11_yahcc"]
+[ext_resource type="PackedScene" uid="uid://sv186jhp6a0j" path="res://Objects/Gameplay/Puzzles/OutletPower/enhanced_power_pole.tscn" id="13_yahcc"]
+[ext_resource type="PackedScene" uid="uid://wdaboct67o3v" path="res://Objects/Gameplay/HandFunctions/JumpPad/jump_pad.tscn" id="14_mwwmi"]
+[ext_resource type="PackedScene" uid="uid://cqepor71t6ham" path="res://Objects/Gameplay/HandFunctions/grabpack_item.tscn" id="16_r63ya"]
+[ext_resource type="PackedScene" uid="uid://cmy5x06xqde83" path="res://Objects/Gameplay/HandFunctions/Grabpack/grabpack_one_item_mesh.tscn" id="17_3bp0r"]
+[ext_resource type="PackedScene" uid="uid://dqt3cqw43ouuq" path="res://Objects/Gameplay/HandFunctions/Grabpack/grabpack_two_item_mesh.tscn" id="18_itv7d"]
+
+[node name="GameMechanics" type="Node3D" unique_id=1458187473]
+script = ExtResource("1_53w33")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1881374542]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 1.919
+light_volumetric_fog_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=638669489]
+environment = ExtResource("1_dd4gg")
+
+[node name="Player" parent="." unique_id=1727012216 instance=ExtResource("2_0pkd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7000003)
+starting_grabpack = 2
+enabled_hands = Array[PackedScene]([ExtResource("2_0t2dv"), ExtResource("3_dd4gg"), ExtResource("4_flpft")])
+
+[node name="PuzzleMechanics" type="Node3D" parent="." unique_id=1661548043]
+
+[node name="Gates" type="Node3D" parent="PuzzleMechanics" unique_id=1060429960]
+
+[node name="Gate" parent="PuzzleMechanics/Gates" unique_id=747044462 instance=ExtResource("3_nlnp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, 0)
+
+[node name="Large Gate" parent="PuzzleMechanics/Gates" unique_id=462762822 instance=ExtResource("4_fy7o5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4, 0, -5.2000003)
+
+[node name="Locker" parent="PuzzleMechanics" unique_id=1725392418 instance=ExtResource("2_dgqrg")]
+transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, -6.4, 0, 7.5)
+
+[node name="PowerReceiver2" parent="PuzzleMechanics" unique_id=356011691 instance=ExtResource("9_qvhf1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.7, 1.8000001, 0.9000001)
+
+[node name="PuzzleComplete" type="Node" parent="PuzzleMechanics/PowerReceiver2" unique_id=816979810]
+script = ExtResource("10_yahcc")
+
+[node name="PowerOutlet" parent="PuzzleMechanics" unique_id=1639535827 instance=ExtResource("10_dnb67")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.7, 1.8000001, 3.2)
+
+[node name="PowerPole" parent="PuzzleMechanics" unique_id=205650432 instance=ExtResource("11_yahcc")]
+
+[node name="PowerPole2" parent="PuzzleMechanics" unique_id=755393360 instance=ExtResource("11_yahcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 0, -0.1)
+
+[node name="PowerPole3" parent="PuzzleMechanics" unique_id=1709490381 instance=ExtResource("11_yahcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6, 0, 5.2000003)
+
+[node name="EnhancedPowerPole" parent="PuzzleMechanics" unique_id=2070971844 instance=ExtResource("13_yahcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.000001, 0, 0.70000005)
+
+[node name="JumpPad" parent="PuzzleMechanics" unique_id=681109814 instance=ExtResource("14_mwwmi")]
+transform = Transform3D(-1, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, -1, 3.2, 0, 4.5)
+
+[node name="GrabpackItem" parent="PuzzleMechanics" unique_id=193939380 instance=ExtResource("16_r63ya")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -2, 0.1, 2)
+
+[node name="GrabpackOneItemMesh" parent="PuzzleMechanics/GrabpackItem" unique_id=175416818 instance=ExtResource("17_3bp0r")]
+
+[node name="GrabpackItem4" parent="PuzzleMechanics" unique_id=1810428823 instance=ExtResource("16_r63ya")]
+transform = Transform3D(0.9659258, 0, -0.25881898, 0, 1, 0, 0.25881898, 0, 0.9659258, 2.4, 0.1, 2.2)
+
+[node name="GrabpackOneItemMesh" parent="PuzzleMechanics/GrabpackItem4" unique_id=224564471 instance=ExtResource("17_3bp0r")]
+
+[node name="GrabpackItem2" parent="PuzzleMechanics" unique_id=225953886 instance=ExtResource("16_r63ya")]
+transform = Transform3D(0.9659258, 0, -0.25881898, 0, 1, 0, 0.25881898, 0, 0.9659258, 1.5, 0.1, 0.9)
+grabpack_number = 2
+
+[node name="GrabpackTwoItemMesh" parent="PuzzleMechanics/GrabpackItem2" unique_id=1219276988 instance=ExtResource("18_itv7d")]
+
+[node name="GrabpackItem3" parent="PuzzleMechanics" unique_id=1377466307 instance=ExtResource("16_r63ya")]
+transform = Transform3D(0.96592575, 0, 0.2588191, 0, 1, 0, -0.2588191, 0, 0.96592575, 4.6000004, 0.1, 1.3)
+grabpack_number = 2
+
+[node name="GrabpackTwoItemMesh" parent="PuzzleMechanics/GrabpackItem3" unique_id=1463883638 instance=ExtResource("18_itv7d")]
+
+[node name="CSG" type="Node3D" parent="." unique_id=1965451440]
+
+[node name="Floor" type="CSGBox3D" parent="CSG" unique_id=1229869529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -1.6499999)
+use_collision = true
+size = Vector3(38.100002, 0.2, 19.2)
+material = ExtResource("1_yoarj")
+
+[node name="Floor2" type="CSGBox3D" parent="CSG" unique_id=1054550456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2999997, -5.3500004)
+use_collision = true
+size = Vector3(38.100002, 9, 0.4)
+material = ExtResource("1_yoarj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/Floor2" unique_id=1264149411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, -2.45, 0)
+operation = 2
+size = Vector3(3.6000001, 4.5, 1)
+
+[connection signal="player_jumped" from="PuzzleMechanics/JumpPad" to="." method="break_hand"]

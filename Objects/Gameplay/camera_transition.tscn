@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://pl1f8rmeka4t"]
+
+[ext_resource type="Script" uid="uid://djnclx453oh8w" path="res://Objects/Gameplay/camera_transition.gd" id="1_jveb6"]
+
+[node name="CameraTransition" type="Node" unique_id=70588993]
+script = ExtResource("1_jveb6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=897649556]
+keep_aspect = 0
