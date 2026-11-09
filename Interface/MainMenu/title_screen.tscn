@@ -560,8 +560,8 @@ scale = Vector2(0.83, 0.83)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_s7yi2")
 theme_override_font_sizes/font_size = 26
-text = "This title uses an Autosave feature for saving progress.
-Do not close the application or turn off the system's power while the save icon is displayed."
+text = "The facility archive is being initialized.
+Do not close the application while records are being accessed."
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="BeforeIntroScreens/GameSave"]
