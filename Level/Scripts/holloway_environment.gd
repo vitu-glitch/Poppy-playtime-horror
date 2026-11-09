@@ -267,8 +267,8 @@ func _build_control_station() -> void:
 			_add_box(self, "Cabinet_Drawer_Front", Vector3(1.02, 0.045, 0.035), Vector3(17.4, y_value, z_value - 0.38), metal)
 			_add_box(self, "Cabinet_Handle", Vector3(0.28, 0.035, 0.045), Vector3(17.4, y_value, z_value - 0.41), panel_cream)
 
-	_add_box(self, "Wall_Monitor_Board", Vector3(4.6, 2.0, 0.14), Vector3(18.45, 4.4, 0.5), dark_metal)
-	_add_box(self, "Wall_Monitor_Glass", Vector3(4.25, 1.65, 0.035), Vector3(18.36, 4.45, 0.5), screen_green)
+	_add_box(self, "Wall_Monitor_Board", Vector3(0.14, 2.0, 4.6), Vector3(18.45, 4.4, 0.5), dark_metal)
+	_add_box(self, "Wall_Monitor_Glass", Vector3(0.035, 1.65, 4.25), Vector3(18.36, 4.45, 0.5), screen_green)
 	_add_label(self, "LIVE FEED  //  C-04", Vector3(18.30, 5.65, 0.5), -90.0, 18, Color(0.66, 1.0, 0.78))
 
 	# Small props make the station feel used rather than like a showroom.
@@ -327,7 +327,7 @@ func _build_service_corridor() -> void:
 
 func _build_observation_lab() -> void:
 	# A side laboratory is accessible from the opening in the corridor's right wall.
-	_add_box(self, "Observation_Lab_Floor", Vector3(14.0, 0.12, 13.0), Vector3(17.0, -0.045, -18.5), floor_material, true)
+	_add_box(self, "Observation_Lab_Floor", Vector3(14.6, 0.12, 13.0), Vector3(16.7, -0.045, -18.5), floor_material, true)
 	_add_box(self, "Observation_Lab_Ceiling", Vector3(14.2, 0.3, 13.2), Vector3(17.0, 8.65, -18.5), dark_metal)
 	_add_box(self, "Observation_Lab_Outer_Wall", Vector3(0.42, 8.5, 13.0), Vector3(23.9, 4.25, -18.5), wall_material, true)
 	_add_box(self, "Observation_Lab_Front_Wall", Vector3(14.0, 8.5, 0.42), Vector3(17.0, 4.25, -12.0), wall_material, true)
