@@ -167,11 +167,11 @@ func _build_wall_panels() -> void:
     for index in range(6):
         var z_value: float = -8.9 + float(index) * 2.9
 
-        _add_box("Left_Wall_Panel_%02d" % index, Vector3(0.06, 2.55, 2.55), Vector3(-18.49, 4.75, z_value), wall_material)
-        _add_box("Right_Wall_Panel_%02d" % index, Vector3(0.06, 2.55, 2.55), Vector3(18.49, 4.75, z_value), wall_material)
+        _add_box("Left_Wall_Panel_%02d" % index, Vector3(0.06, 2.55, 2.55), Vector3(-18.55, 4.75, z_value), wall_material)
+        _add_box("Right_Wall_Panel_%02d" % index, Vector3(0.06, 2.55, 2.55), Vector3(18.55, 4.75, z_value), wall_material)
 
-        _add_box("Left_Wall_Panel_Seam_%02d" % index, Vector3(0.035, 2.50, 0.045), Vector3(-18.44, 4.75, z_value + 1.28), trim_material)
-        _add_box("Right_Wall_Panel_Seam_%02d" % index, Vector3(0.035, 2.50, 0.045), Vector3(18.44, 4.75, z_value + 1.28), trim_material)
+        _add_box("Left_Wall_Panel_Seam_%02d" % index, Vector3(0.035, 2.50, 0.045), Vector3(-18.50, 4.75, z_value + 1.28), trim_material)
+        _add_box("Right_Wall_Panel_Seam_%02d" % index, Vector3(0.035, 2.50, 0.045), Vector3(18.50, 4.75, z_value + 1.28), trim_material)
 
     # A restrained safety border follows the usable floor perimeter.
     _add_box("Floor_Safety_Line_Left", Vector3(0.075, 0.012, 16.7), Vector3(-16.6, 0.008, -1.65), amber_material)
@@ -181,17 +181,17 @@ func _build_wall_panels() -> void:
 
 func _build_observation_window() -> void:
     # One large, framed window instead of multiple small decorative objects.
-    _add_box("Observation_Glass", Vector3(0.07, 2.75, 7.1), Vector3(-18.47, 5.1, -1.6), glass_material)
-    _add_box("Observation_Frame_Top", Vector3(0.15, 0.16, 7.35), Vector3(-18.40, 6.58, -1.6), trim_material)
-    _add_box("Observation_Frame_Bottom", Vector3(0.15, 0.16, 7.35), Vector3(-18.40, 3.62, -1.6), trim_material)
-    _add_box("Observation_Frame_Left", Vector3(0.15, 3.0, 0.16), Vector3(-18.40, 5.1, -5.25), trim_material)
-    _add_box("Observation_Frame_Right", Vector3(0.15, 3.0, 0.16), Vector3(-18.40, 5.1, 2.05), trim_material)
+    _add_box("Observation_Glass", Vector3(0.07, 2.75, 7.1), Vector3(-18.55, 5.1, -1.6), glass_material)
+    _add_box("Observation_Frame_Top", Vector3(0.15, 0.16, 7.35), Vector3(-18.49, 6.58, -1.6), trim_material)
+    _add_box("Observation_Frame_Bottom", Vector3(0.15, 0.16, 7.35), Vector3(-18.49, 3.62, -1.6), trim_material)
+    _add_box("Observation_Frame_Left", Vector3(0.15, 3.0, 0.16), Vector3(-18.49, 5.1, -5.25), trim_material)
+    _add_box("Observation_Frame_Right", Vector3(0.15, 3.0, 0.16), Vector3(-18.49, 5.1, 2.05), trim_material)
 
     for z_value in [-3.95, -1.6, 0.75]:
-        _add_box("Observation_Glass_Mullion", Vector3(0.15, 2.9, 0.10), Vector3(-18.40, 5.1, z_value), trim_material)
+        _add_box("Observation_Glass_Mullion", Vector3(0.15, 2.9, 0.10), Vector3(-18.49, 5.1, z_value), trim_material)
 
-    _add_box("Observation_Name_Plate", Vector3(0.07, 0.52, 4.0), Vector3(-18.47, 7.12, -1.6), teal_material)
-    _add_label("OBSERVATION // C-04", Vector3(-18.34, 7.12, -1.6), -90.0, 19, Color(0.85, 0.79, 0.59))
+    _add_box("Observation_Name_Plate", Vector3(0.07, 0.52, 4.0), Vector3(-18.55, 7.12, -1.6), teal_material)
+    _add_label("OBSERVATION // C-04", Vector3(-18.38, 7.12, -1.6), -90.0, 19, Color(0.85, 0.79, 0.59))
 
 
 func _build_control_station() -> void:
@@ -208,9 +208,9 @@ func _build_control_station() -> void:
         var screen_x: float = screen_positions[index]
         var screen_material: Material = amber_screen_material if index == 1 else green_screen_material
         _add_box("CRT_Housing_%02d" % index, Vector3(1.55, 1.02, 0.18), Vector3(screen_x, 1.78, -0.22), dark_material)
-        _add_box("CRT_Display_%02d" % index, Vector3(1.38, 0.82, 0.025), Vector3(screen_x, 1.79, -0.325), screen_material)
+        _add_box("CRT_Display_%02d" % index, Vector3(1.38, 0.82, 0.025), Vector3(screen_x, 1.79, -0.115), screen_material)
         _add_box("CRT_Status_Light_%02d" % index, Vector3(0.16, 0.035, 0.025), Vector3(screen_x - 0.52, 1.27, -0.33), amber_material)
-        _add_label(screen_labels[index], Vector3(screen_x, 1.80, -0.35), 0.0, 12, Color(0.69, 1.0, 0.82))
+        _add_label(screen_labels[index], Vector3(screen_x, 1.80, -0.085), 0.0, 12, Color(0.69, 1.0, 0.82))
 
     _add_box("Console_Keyboard_Left", Vector3(1.35, 0.045, 0.38), Vector3(11.45, 1.12, 0.90), trim_material)
     _add_box("Console_Keyboard_Center", Vector3(1.35, 0.045, 0.38), Vector3(13.35, 1.12, 0.90), trim_material)
@@ -219,9 +219,9 @@ func _build_control_station() -> void:
     # A closed cabinet and one wall-mounted system panel finish the station.
     _add_box("Console_Equipment_Cabinet", Vector3(1.0, 2.1, 0.82), Vector3(17.55, 1.05, 3.45), trim_material)
     _add_box("Console_Cabinet_Label", Vector3(0.70, 0.20, 0.025), Vector3(17.55, 1.78, 3.02), cream_material)
-    _add_box("Wall_System_Panel", Vector3(0.12, 1.75, 2.9), Vector3(18.48, 4.5, 0.3), dark_material)
-    _add_box("Wall_System_Panel_Display", Vector3(0.035, 1.0, 2.2), Vector3(18.40, 4.72, 0.3), green_screen_material)
-    _add_label("SYSTEM STATUS // C-04", Vector3(18.34, 5.65, 0.3), 90.0, 16, Color(0.68, 0.96, 0.80))
+    _add_box("Wall_System_Panel", Vector3(0.12, 1.75, 2.9), Vector3(18.55, 4.5, 0.3), dark_material)
+    _add_box("Wall_System_Panel_Display", Vector3(0.035, 1.0, 2.2), Vector3(18.48, 4.72, 0.3), green_screen_material)
+    _add_label("SYSTEM STATUS // C-04", Vector3(18.40, 5.65, 0.3), 90.0, 16, Color(0.68, 0.96, 0.80))
 
 
 func _build_ceiling_lighting() -> void:
