@@ -179,7 +179,7 @@ func _add_monitor(parent: Node3D, position: Vector3, screen_material: Material, 
 
 func _build_main_room() -> void:
 	# The original floor and puzzle remain in place. This textured layer sits directly on top.
-	_add_box(self, "Textured_Industrial_Floor", Vector3(37.75, 0.035, 18.85), Vector3(0.0, 0.018, -1.65), floor_material)
+	_add_box(self, "Textured_Industrial_Floor", Vector3(37.75, 0.035, 18.85), Vector3(0.0, -0.0175, -1.65), floor_material)
 
 	# Side walls and the rear entry wall frame the original mechanics room.
 	_add_box(self, "Left_Outer_Wall", Vector3(0.48, 8.8, 19.2), Vector3(-18.82, 4.4, -1.65), wall_material, true)
@@ -209,9 +209,9 @@ func _build_main_room() -> void:
 
 	# Textured floor insets and worn safety markings.
 	for x_value in [-15.0, -10.0, -5.0, 0.0, 5.0, 10.0, 15.0]:
-		_add_box(self, "Floor_Tile_Seam", Vector3(0.025, 0.012, 17.8), Vector3(x_value, 0.041, -1.65), dark_metal)
-	_add_box(self, "Yellow_Floor_Line_Left", Vector3(0.10, 0.014, 17.5), Vector3(-16.9, 0.045, -1.65), yellow)
-	_add_box(self, "Yellow_Floor_Line_Right", Vector3(0.10, 0.014, 17.5), Vector3(16.9, 0.045, -1.65), yellow)
+		_add_box(self, "Floor_Tile_Seam", Vector3(0.025, 0.012, 17.8), Vector3(x_value, 0.008, -1.65), dark_metal)
+	_add_box(self, "Yellow_Floor_Line_Left", Vector3(0.10, 0.014, 17.5), Vector3(-16.9, 0.008, -1.65), yellow)
+	_add_box(self, "Yellow_Floor_Line_Right", Vector3(0.10, 0.014, 17.5), Vector3(16.9, 0.008, -1.65), yellow)
 
 	# Overhead structural beams.
 	for z_value in [-8.0, -3.0, 2.0, 7.0]:
@@ -299,7 +299,7 @@ func _build_security_cameras() -> void:
 
 func _build_service_corridor() -> void:
 	# This corridor continues beyond the original large gate, making the gate lead somewhere.
-	_add_box(self, "Corridor_Floor", Vector3(8.45, 0.12, 13.7), Vector3(5.4, -0.045, -18.15), floor_material, true)
+	_add_box(self, "Corridor_Floor", Vector3(8.45, 0.12, 13.9), Vector3(5.4, -0.06, -18.15), floor_material, true)
 	_add_box(self, "Corridor_Left_Wall", Vector3(0.42, 8.5, 19.3), Vector3(1.12, 4.25, -15.0), wall_material, true)
 	_add_box(self, "Corridor_Right_Wall_Near", Vector3(0.42, 8.5, 9.0), Vector3(9.68, 4.25, -10.0), wall_material, true)
 	_add_box(self, "Corridor_Right_Wall_Far", Vector3(0.42, 8.5, 4.0), Vector3(9.68, 4.25, -22.8), wall_material, true)
@@ -327,7 +327,7 @@ func _build_service_corridor() -> void:
 
 func _build_observation_lab() -> void:
 	# A side laboratory is accessible from the opening in the corridor's right wall.
-	_add_box(self, "Observation_Lab_Floor", Vector3(14.6, 0.12, 13.0), Vector3(16.7, -0.045, -18.5), floor_material, true)
+	_add_box(self, "Observation_Lab_Floor", Vector3(14.6, 0.12, 13.0), Vector3(16.7, -0.06, -18.5), floor_material, true)
 	_add_box(self, "Observation_Lab_Ceiling", Vector3(14.2, 0.3, 13.2), Vector3(17.0, 8.65, -18.5), dark_metal)
 	_add_box(self, "Observation_Lab_Outer_Wall", Vector3(0.42, 8.5, 13.0), Vector3(23.9, 4.25, -18.5), wall_material, true)
 	_add_box(self, "Observation_Lab_Front_Wall", Vector3(14.0, 8.5, 0.42), Vector3(17.0, 4.25, -12.0), wall_material, true)
@@ -371,7 +371,7 @@ func _build_observation_lab() -> void:
 
 func _build_entry_airlock() -> void:
 	# Small staff vestibule behind the player spawn.
-	_add_box(self, "Staff_Airlock_Floor", Vector3(8.0, 0.12, 10.0), Vector3(0.0, -0.045, 13.0), floor_material, true)
+	_add_box(self, "Staff_Airlock_Floor", Vector3(8.0, 0.12, 10.1), Vector3(0.0, -0.06, 13.0), floor_material, true)
 	_add_box(self, "Staff_Airlock_Left_Wall", Vector3(0.42, 8.3, 10.0), Vector3(-4.0, 4.15, 13.0), wall_material, true)
 	_add_box(self, "Staff_Airlock_Right_Wall", Vector3(0.42, 8.3, 10.0), Vector3(4.0, 4.15, 13.0), wall_material, true)
 	_add_box(self, "Staff_Airlock_End_Wall", Vector3(8.0, 8.3, 0.42), Vector3(0.0, 4.15, 18.0), wall_material, true)
