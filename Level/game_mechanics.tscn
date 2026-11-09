@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cqepor71t6ham" path="res://Objects/Gameplay/HandFunctions/grabpack_item.tscn" id="16_r63ya"]
 [ext_resource type="PackedScene" uid="uid://cmy5x06xqde83" path="res://Objects/Gameplay/HandFunctions/Grabpack/grabpack_one_item_mesh.tscn" id="17_3bp0r"]
 [ext_resource type="PackedScene" uid="uid://dqt3cqw43ouuq" path="res://Objects/Gameplay/HandFunctions/Grabpack/grabpack_two_item_mesh.tscn" id="18_itv7d"]
+[ext_resource type="Script" path="res://Level/Scripts/holloway_environment.gd" id="19_holloway"]
 
 [node name="GameMechanics" type="Node3D" unique_id=1458187473]
 script = ExtResource("1_53w33")
@@ -113,5 +114,8 @@ material = ExtResource("1_yoarj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, -2.45, 0)
 operation = 2
 size = Vector3(3.6000001, 4.5, 1)
+
+[node name="HollowayEnvironment" type="Node3D" parent="."]
+script = ExtResource("19_holloway")
 
 [connection signal="player_jumped" from="PuzzleMechanics/JumpPad" to="." method="break_hand"]
