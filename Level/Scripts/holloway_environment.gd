@@ -294,6 +294,10 @@ func _build_security_cameras() -> void:
 		trash_node.name = "Office_Trashcans"
 		trash_node.position = Vector3(17.0, 0.0, 6.0)
 		trash_node.scale = Vector3.ONE * 0.9
+		# The source pack includes two unused world-grid preview meshes.
+		for child in trash_node.get_children():
+			if child.name == "SM_LargeTrashcan_A" or child.name == "SM_SmallTrashcan_B":
+				child.visible = false
 		add_child(trash_node)
 
 
