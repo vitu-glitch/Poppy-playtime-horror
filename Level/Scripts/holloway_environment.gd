@@ -199,8 +199,8 @@ func _build_main_room() -> void:
 	_add_label(self, "HOLLOWAY RESEARCH CENTER  //  OBSERVATION WING C-04", Vector3(5.4, 6.15, -5.68), 180.0, 23, Color(0.92, 0.78, 0.48))
 
 	# Industrial baseboards, upper trim and structural wall ribs.
-	for side in [-1.0, 1.0]:
-		var x := side * 18.53
+	for side: float in [-1.0, 1.0]:
+		var x: float = side * 18.53
 		_add_box(self, "Wall_Base_Trim", Vector3(0.16, 0.24, 18.9), Vector3(x, 0.25, -1.65), dark_metal)
 		_add_box(self, "Wall_Upper_Trim", Vector3(0.20, 0.18, 18.9), Vector3(x, 7.95, -1.65), metal)
 		_add_box(self, "Wall_Safety_Stripe", Vector3(0.055, 0.12, 18.8), Vector3(side * 18.45, 2.7, -1.65), yellow)
