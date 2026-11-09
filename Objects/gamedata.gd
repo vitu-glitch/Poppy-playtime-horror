@@ -66,9 +66,7 @@ func load_quality_environments():
 func setting_changed(setting, _value): if setting ==  "motion_blur" or setting == "graphics_quality": load_quality_environments()
 
 func load_checkpoint():
-	#ADD YOUR LOAD CHECKPOINT CODE HERE
-	#THE CODE ALREADY HERE IS ONLY FOR TESTING
-	load_scene("res://Level/test_map.tscn")
+	load_scene("res://Level/game_mechanics.tscn")
 
 func disable_input(action_name, button):
 	var button_to_remove = button  # Left mouse button (value = 1)

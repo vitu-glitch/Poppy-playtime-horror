@@ -4,12 +4,9 @@ extends Control
 @onready var before_intro_screens = $BeforeIntroScreens
 @onready var menu = $menu
 @onready var menu_popup = $menu_popup
-@onready var music = $MenuMusic/Music
-@onready var render_bg = $menu/RenderBG
 @onready var load_game = $menu/LoadGame
 @onready var settings_menu = $menu/SettingsMenu
 
-var ch4blue_hex = "69dbff"
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -20,8 +17,6 @@ func screens_finished():
 func logo_finished():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	title_intro.queue_free()
-	render_bg.play()
-	music.play()
 	menu.visible = true
 	get_node("menu/Buttons/Continue").visible = Game.checkpoint > 0
 

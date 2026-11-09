@@ -9,7 +9,7 @@ func _ready() -> void:
 	$AnimationPlayer.play("hold")
 	$VideoStreamPlayer.play()
 	await $VideoStreamPlayer.finished
-	Game.load_checkpoint()
+	_finish_intro()
 
 func _process(delta: float) -> void:
 	if finished: return
@@ -20,7 +20,11 @@ func _process(delta: float) -> void:
 	var mat: ShaderMaterial = ring.material
 	mat.set_shader_parameter("value", skip_amount)
 	
-	if skip_amount == 1.0:
-		$VideoStreamPlayer.stop()
-		Game.load_checkpoint()
-		finished = true
+	if skip_amount >= 1.0:
+		_finish_intro()
+
+func _finish_intro() -> void:
+	if finished: return
+	finished = true
+	$VideoStreamPlayer.stop()
+	Game.load_checkpoint()

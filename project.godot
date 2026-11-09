@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="PlaytimeStarterKit"
-run/main_scene="uid://cc7xah41hgiub"
+config/name="HOLLOWAY Research Center"
+run/main_scene="uid://dtp3lixj6uyxo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

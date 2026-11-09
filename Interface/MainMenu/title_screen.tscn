@@ -1,24 +1,21 @@
-[gd_scene load_steps=41 format=3 uid="uid://dtp3lixj6uyxo"]
+[gd_scene load_steps=38 format=3 uid="uid://dtp3lixj6uyxo"]
 
 [ext_resource type="Script" uid="uid://id7iagt8fncx" path="res://Interface/MainMenu/Scripts/title_screen.gd" id="1_dj2vu"]
 [ext_resource type="FontFile" uid="uid://dp3oq0ou16joq" path="res://Interface/Font/VCR_OSD_MONO_1.001.ttf" id="2_dj2vu"]
 [ext_resource type="Script" uid="uid://dxaer0i0hovev" path="res://Interface/MainMenu/Scripts/before_intro_screens.gd" id="2_s6w10"]
 [ext_resource type="Script" uid="uid://qe5ttrlwg8gk" path="res://Interface/MainMenu/Scripts/title_intro.gd" id="4_psfkv"]
-[ext_resource type="Texture2D" uid="uid://d0emq4bgu0a6h" path="res://logo_image.png" id="5_2834n"]
-[ext_resource type="Texture2D" uid="uid://b1i72po4gekti" path="res://Godot_logo.svg" id="6_qj1tc"]
 [ext_resource type="AudioStream" uid="uid://c33jjw1eus4pc" path="res://Interface/MainMenu/Sound/SW_SFX_TitleScreen_PressAnyButton.wav" id="7_fg6rl"]
 [ext_resource type="FontFile" uid="uid://cfvfiw1qtrep1" path="res://Interface/Font/OverusedGrotesk-Bold.otf" id="7_sn61t"]
 [ext_resource type="FontFile" uid="uid://d02qiqkper325" path="res://Interface/Font/OverusedGrotesk-Medium.otf" id="8_s7yi2"]
 [ext_resource type="Texture2D" uid="uid://cg8fpx4l4o3mk" path="res://Interface/Loading/T_SavingIcon.png" id="8_uoyxv"]
 [ext_resource type="Theme" uid="uid://c3y4p2f8djdyb" path="res://Interface/MainMenu/Themes/title_button.tres" id="9_2653s"]
+[ext_resource type="Texture2D" path="res://Interface/MainMenu/Texture/holloway_menu_bg.webp" id="24_holloway"]
 [ext_resource type="Script" uid="uid://syb4cas6oqdo" path="res://Interface/MainMenu/button_sfx_player.gd" id="12_cxxfl"]
 [ext_resource type="AudioStream" uid="uid://cr1h44t3w130f" path="res://Interface/MainMenu/Sound/hover.wav" id="13_2lx6b"]
-[ext_resource type="VideoStream" uid="uid://b44atf63p6dkf" path="res://Interface/MainMenu/Texture/PPC4_Main_Menu_Backgroundv2.ogv" id="14_2lx6b"]
 [ext_resource type="PackedScene" uid="uid://wted730xx6x5" path="res://Interface/Settings/settings_menu.tscn" id="14_2834n"]
 [ext_resource type="AudioStream" uid="uid://c7wgcc6jimvtc" path="res://Interface/MainMenu/Sound/SW_SFX_Menu_Forward.wav" id="15_6ttfi"]
 [ext_resource type="PackedScene" uid="uid://c0igyvhisp714" path="res://Interface/Loading/LoadGameMenu/load_game.tscn" id="15_o37xk"]
 [ext_resource type="AudioStream" uid="uid://d3q8178oe4ycy" path="res://Interface/MainMenu/Sound/SW_SFX_Menu_Backward.wav" id="16_8kiwb"]
-[ext_resource type="AudioStream" uid="uid://ilcdsxfj7o2g" path="res://Interface/MainMenu/Music/ch4TitleMusic.mp3" id="16_xtj4b"]
 [ext_resource type="AudioStream" uid="uid://bebahieimis82" path="res://Interface/MainMenu/Sound/select2.wav" id="17_8kiwb"]
 [ext_resource type="PackedScene" uid="uid://dtpairjbrlucx" path="res://Interface/menu_popup.tscn" id="23_qj1tc"]
 
@@ -464,7 +461,7 @@ offset_bottom = 218.0
 theme_override_colors/font_color = Color(0.411765, 0.858824, 1, 1)
 theme_override_fonts/font = ExtResource("7_sn61t")
 theme_override_font_sizes/font_size = 72
-text = "THIS IS A FANGAME"
+text = "HOLLOWAY RESEARCH CENTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -475,7 +472,7 @@ offset_bottom = 1114.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_s7yi2")
 theme_override_font_sizes/font_size = 43
-text = "Created using the following:"
+text = "INTERNAL ARCHIVES DIVISION"
 horizontal_alignment = 1
 
 [node name="WarningText2" type="Label" parent="BeforeIntroScreens/PlaytimeStarter"]
@@ -485,7 +482,7 @@ offset_bottom = 1284.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_s7yi2")
 theme_override_font_sizes/font_size = 43
-text = "Playtime Starter Kit by Derective"
+text = "PROPERTY OF HOLLOWAY RESEARCH CENTER"
 horizontal_alignment = 1
 
 [node name="WarningText3" type="Label" parent="BeforeIntroScreens/PlaytimeStarter"]
@@ -496,18 +493,10 @@ offset_bottom = 1291.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_s7yi2")
 theme_override_font_sizes/font_size = 43
-text = "Godot Game Engine"
+text = "AUTHORIZED PERSONNEL ONLY"
 horizontal_alignment = 1
 
-[node name="LogoImage" type="Sprite2D" parent="BeforeIntroScreens/PlaytimeStarter"]
-position = Vector2(558.00006, 591.00006)
-scale = Vector2(0.9320331, 0.92083496)
-texture = ExtResource("5_2834n")
 
-[node name="LogoImage2" type="Sprite2D" parent="BeforeIntroScreens/PlaytimeStarter"]
-position = Vector2(1385, 637)
-scale = Vector2(0.6914062, 0.71014476)
-texture = ExtResource("6_qj1tc")
 
 [node name="Warning" type="Node2D" parent="BeforeIntroScreens"]
 visible = false
@@ -531,7 +520,7 @@ offset_bottom = 1080.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_s7yi2")
 theme_override_font_sizes/font_size = 32
-text = "Write your whole goofy ah warning thingy here."
+text = "This experience contains psychological horror, disturbing imagery,\nflashing lights and loud sounds.\nViewer discretion is advised."
 horizontal_alignment = 1
 
 [node name="CompanyLogo" type="Node2D" parent="BeforeIntroScreens"]
@@ -544,7 +533,7 @@ offset_bottom = 867.0
 theme_override_colors/font_color = Color(0.411765, 0.858824, 1, 1)
 theme_override_fonts/font = ExtResource("7_sn61t")
 theme_override_font_sizes/font_size = 76
-text = "YOUR LOGO HERE"
+text = "HOLLOWAY RESEARCH CENTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -558,7 +547,7 @@ offset_bottom = 458.0
 theme_override_colors/font_color = Color(0.29411766, 0.8117647, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_cxxfl")
 theme_override_font_sizes/font_size = 77
-text = "GAME SAVING"
+text = "ARCHIVE INITIALIZATION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -642,7 +631,7 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-text = "Created by [Your Name / Username]"
+text = "HOLLOWAY RESEARCH CENTER // INTERNAL ARCHIVES"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -662,8 +651,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dj2vu")
 theme_override_font_sizes/font_size = 100
-text = "YOUR
-LOGO"
+text = "HOLLOWAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -696,20 +684,16 @@ stream = ExtResource("16_8kiwb")
 [node name="Forward2" type="AudioStreamPlayer" parent="menu/ButtonSFXPlayer"]
 stream = ExtResource("17_8kiwb")
 
-[node name="RenderBG" type="VideoStreamPlayer" parent="menu"]
+[node name="RenderBG" type="TextureRect" parent="menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -336.0
-offset_right = -336.0
-offset_bottom = -278.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.355, 1.355)
-stream = ExtResource("14_2lx6b")
-expand = true
-loop = true
+texture = ExtResource("24_holloway")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="ColorRect" type="ColorRect" parent="menu"]
 material = SubResource("ShaderMaterial_qj1tc")
@@ -727,7 +711,7 @@ scale = Vector2(0.745, 0.745)
 theme_override_colors/font_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
 theme_override_fonts/font = ExtResource("7_sn61t")
 theme_override_font_sizes/font_size = 50
-text = "Above Title"
+text = "INTERNAL ARCHIVE // 1997"
 vertical_alignment = 1
 uppercase = true
 
@@ -741,7 +725,7 @@ scale = Vector2(0.785, 0.785)
 theme_override_colors/font_color = Color(0.29411766, 0.8117647, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_uoyxv")
 theme_override_font_sizes/font_size = 120
-text = "YOUR TITLE  "
+text = "HOLLOWAY  "
 horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true
@@ -762,7 +746,7 @@ offset_bottom = 554.0
 scale = Vector2(0.435, 0.435)
 theme_override_fonts/font = SubResource("FontVariation_2lx6b")
 theme_override_font_sizes/font_size = 50
-text = "Your synopsis here."
+text = "THE FACILITY WAS SEALED. THE RECORDINGS WERE NOT."
 
 [node name="version" type="Label" parent="menu"]
 layout_mode = 0
@@ -773,7 +757,7 @@ offset_bottom = 1083.0
 theme_override_colors/font_color = Color(0.27387264, 0.27387276, 0.27387285, 1)
 theme_override_fonts/font = SubResource("FontVariation_mh3bh")
 theme_override_font_sizes/font_size = 20
-text = "v2025.10.31"
+text = "ARCHIVE 01 // 1997.10.31"
 
 [node name="Buttons" type="Node2D" parent="menu"]
 position = Vector2(81, 4)
@@ -853,11 +837,6 @@ menu_popup = NodePath("../../menu_popup")
 
 [node name="menu_popup" parent="." instance=ExtResource("23_qj1tc")]
 layout_mode = 1
-
-[node name="MenuMusic" type="Node" parent="."]
-
-[node name="Music" type="AudioStreamPlayer" parent="MenuMusic"]
-stream = ExtResource("16_xtj4b")
 
 [node name="MenuTransition" type="Node2D" parent="."]
 visible = false
